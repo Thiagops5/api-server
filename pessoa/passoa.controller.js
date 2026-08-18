@@ -1,4 +1,4 @@
-const { findAll } = require('./pessoa.service');
+const { findAll, findById } = require('./pessoa.service');
 
 
 
@@ -13,7 +13,7 @@ const buscasPessoas = async (req, res) => {
 }
 
 const buscasPessoaPorId = async (req, res) => {
- const { id } = req?.params?.id;
+ const { id } = req.params;
  if (!id) {
     res.status(400).send('ID da pessoa não fornecido');
     return;
