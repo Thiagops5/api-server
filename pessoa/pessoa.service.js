@@ -1,14 +1,19 @@
 const api = require('../api');
 
 module.exports = {
-  findAll: async () => {
+  findAll: async (limit) => {
     try {
       const response = await api.get('/pessoa');
-      return response.data;
+      let dados = response.data;
+      if (limit) {
+        dados = dados.slice(0, parseInt(limit));
+      }
+      return dados;
     } catch (error) {
       throw error;
     }
   },
+
   findById: async (id) => {
     try {
       const response = await api.get(`/pessoa/${id}`);
@@ -18,4 +23,12 @@ module.exports = {
     }
   },
 
+  create: async (novaPessoa) => {
+    try {
+      const response = await api.post('/pessoa', novaPessoa);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
 }

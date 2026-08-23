@@ -1,11 +1,13 @@
-const { findAll, findById } = require('./pessoa.service');
-
-
+const { findAll, findById, create } = require('./pessoa.service');
 
 
 const buscasPessoas = async (req, res) => {
     try {
-        const pessoas = await findAll();
+        // MUDANÇA: Captura o "_limit" da URL se ele existir
+        const limit = req.query._limit;
+        
+        // MUDANÇA: Envia o limite para o Serviço cortar a lista
+        const pessoas = await findAll(limit);
         res.send(pessoas);
     } catch (error) {
         res.status(500).send(error.message);
@@ -13,25 +15,31 @@ const buscasPessoas = async (req, res) => {
 }
 
 const buscasPessoaPorId = async (req, res) => {
- const id = req?.params?.id;
- if (!id) {
-    res.status(400).send('ID da pessoa não fornecido');
-    return;
-  }
-try {
-    const pessoa = await findById(id);
-    if (!pessoa) {
-        res.status(404).send('Pessoa não encontrada');
+    const id = req?.params?.id;
+    if (!id) {
+        res.status(400).send('ID da pessoa não fornecido');
         return;
     }
-    res.send(pessoa);
-} catch (error) {
-    res.status(500).send(error.message);
-}
+    try {
+        const pessoa = await findById(id);
+        if (!pessoa) {
+            res.status(404).send('Pessoa não encontrada');
+            return;
+        }
+        res.send(pessoa);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
 }
 
-const criacaoPessoa = (req, res) => {
-    res.send('cria uma nova pessoa');
+const criacaoPessoa = async (req, res) => {
+    try {
+        const pessoa = req.body;
+        const novaPessoa = await create(pessoa);
+        res.status(201).send(novaPessoa);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
 }
 
 const atualizaPessoa = (req, res) => {
@@ -48,5 +56,4 @@ module.exports = {
     criacaoPessoa,
     atualizaPessoa,
     deletaPessoa
-
 }

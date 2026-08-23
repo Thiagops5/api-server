@@ -1,16 +1,41 @@
 {
   "pessoa": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Thiago",
       "idade": 19,
       "email": "thiago@example.com"
     },
-        {
-      "id": 2,
-      "nome": "Thiagops",
-      "idade": 20,
-      "email": "thiagoooo@example.com"
+    {
+      "nome": "thiaguinho",
+      "idade": "19",
+      "email": "thiagodesenvedordosite@gmail.com",
+      "id": "yNrK6zTzaLc"
+    },
+    {
+      "nome": "lidia",
+      "idade": "42",
+      "email": "lidiapacheco@gmail.com",
+      "id": "hs728qs_X8s"
+    },
+    {
+      "nome": "valdir",
+      "idade": "52",
+      "email": "valdirrodrigues@gmail.com",
+      "id": "Hp4EyoCLzSc"
+    },
+    {
+      "nome": "elias",
+      "idade": "33",
+      "email": "elias@gmail",
+      "id": "92xyh_uUXmg"
+    },
+    {
+      "nome": "negão",
+      "idade": "10",
+      "email": "negao@gmail.com",
+      "id": "v8Z19j8tmL4"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

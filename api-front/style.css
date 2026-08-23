@@ -1,0 +1,82 @@
+body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f0; 
+        color: #1a1a1a;
+        max-width: 600px;
+        margin: 0 auto; /* Centraliza tudo na tela */
+        padding: 20px;
+    }
+
+    h1, h2 {
+        color: #4A5D23; 
+        text-align: center;
+    }
+
+    /* Estilização do Formulário colocando no formato de cartão */
+    #formulario {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+
+    .campo {
+        margin-bottom: 15px;
+    }
+
+    .campo label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .campo input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box; 
+        font-size: 15px;
+    }
+
+    /* O Botão de Enviar */
+    #btn-submit {
+        width: 100%;
+        padding: 12px;
+        background-color: #4A5D23; /* Verde Musgo */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+    #btn-submit:hover {
+        background-color: #cc4e29; 
+    }
+
+    #btn-submit:disabled {
+        background-color: #999; 
+        cursor: not-allowed;
+    }
+
+    /* Lista de Pessoas  */
+    .cartao-pessoa {
+        background: #ffffff;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 6px solid #4A5D23; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        margin-bottom: 15px;
+    }
+
+    .dados-pessoa {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 15px;
+    }
