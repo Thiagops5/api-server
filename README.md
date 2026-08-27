@@ -1,4 +1,4 @@
-# API Trabalho
+# API Server Json
 
 Uma aplicação full-stack simples para gerenciamento de pessoas, desenvolvida com Node.js, Express, JSON Server e um frontend em Vanilla JavaScript.
 
